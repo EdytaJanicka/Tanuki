@@ -21,7 +21,14 @@ public class QuestsScript : MonoBehaviour
         quest4.SetActive(false);
         quest5.SetActive(false);
     }
-
+    private void Update()
+    {
+        if(GameManager.instance.washingComplete == true)
+        {
+            quest2SetActive();
+            quest1SetDesactive();
+        }
+    }
     public void quest1SetActive()
     {
         quest1.SetActive(true);

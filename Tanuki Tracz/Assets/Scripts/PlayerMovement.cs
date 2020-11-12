@@ -10,10 +10,22 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     public bool stopMovement = true;
     Vector3 velocity;
+    public Vector3 startPos;
 
-    void Start()
+    void Awake()
     {
-        
+        Debug.Log("Hmmmmmmmm");
+        if(GameManager.instance.position != startPos)
+        {
+           Debug.Log("Działa");
+            Debug.Log(GameManager.instance.position);
+            Debug.Log(transform.localPosition);
+            transform.position = GameManager.instance.position;
+           Debug.Log(GameManager.instance.position);
+            Debug.Log(transform.localPosition);
+
+        }
+        Debug.Log("Nie działa");
     }
 
     // Update is called once per frame
