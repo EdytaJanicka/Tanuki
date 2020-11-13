@@ -1179,7 +1179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6255898618441694067}
   m_LocalRotation: {x: 0.6426534, y: -0.5063024, z: 0.22586636, w: 0.528809}
-  m_LocalPosition: {x: 7.5739, y: 1.8156681, z: -6.9656506}
+  m_LocalPosition: {x: 7.538, y: 1.792, z: -6.876}
   m_LocalScale: {x: 0.62261164, y: 0.11787002, z: 0.14812407}
   m_Children: []
   m_Father: {fileID: 8321000094479291516}
@@ -1450,7 +1450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7503820133844574182}
   m_LocalRotation: {x: 0.19422226, y: -0.73603785, z: 0.34128642, w: 0.5514069}
-  m_LocalPosition: {x: 7.468, y: 1.919, z: -7.168}
+  m_LocalPosition: {x: 7.4321, y: 1.8953317, z: -7.078349}
   m_LocalScale: {x: 0.44461358, y: 0.5707726, z: 0.16801247}
   m_Children: []
   m_Father: {fileID: 8321000094479291516}
@@ -1797,6 +1797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8321000094479291516}
+  - component: {fileID: 8660969448256982727}
   m_Layer: 0
   m_Name: tanuki
   m_TagString: Untagged
@@ -1804,6 +1805,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8660969448256982727
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8660969448256982726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd7a1ba561fe5494e94a9a046afaa199, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8707273952703112551
 GameObject:
   m_ObjectHideFlags: 0
