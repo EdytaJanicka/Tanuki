@@ -28,7 +28,7 @@ public class QuestBar : MonoBehaviour
         if (currentPoints == completePoints)
         {
             GameManager.instance.washingComplete = true;
-            SceneManager.LoadScene("TestScripts");
+            SceneManager.LoadScene("GAME");
         }
     }
 

@@ -17,7 +17,7 @@ public class MotherConversation : MonoBehaviour
     public GameObject movement;
     public GameObject camera1;
     public int isAgreedInConversation = 0;
-    public GameObject quest1;
+ 
 
 
     void Start()

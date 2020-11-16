@@ -11,9 +11,12 @@ public class PlayerMovement : MonoBehaviour
     public bool stopMovement = true;
     Vector3 velocity;
     public Vector3 startPos;
+    public Animator animator;
+    public GameObject tanukiBody;
 
     void Awake()
     {
+        
         Debug.Log("Hmmmmmmmm");
         if(GameManager.instance.position != startPos)
         {
@@ -33,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = 0;
         float z = 0;
-
+        
         if (stopMovement)
         {
              x = Input.GetAxis("Horizontal");
@@ -43,7 +46,18 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        if (x != 0 || z != 0)
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            animator.SetBool("Run", false);
+            
+        }
+
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity);
+        
     }
 }
