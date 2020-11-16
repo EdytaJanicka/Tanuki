@@ -23,12 +23,17 @@ public class MotherConversation : MonoBehaviour
     void Start()
     {
         buttonE.SetActive(false);
+
+        if (GameManager.instance.washingComplete == true)
+        {
+            Agreed();
+            Agreed();
+        }
     }
 
    
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 0)
         {
             ConversationManager.Instance.StartConversation(myConversation);
@@ -36,9 +41,18 @@ public class MotherConversation : MonoBehaviour
             isTalking = true;
             StopMoving();
         }
+
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 1)
         {
             ConversationManager.Instance.StartConversation(myConversation1);
+            buttonE.SetActive(false);
+            isTalking = true;
+            StopMoving();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 2)
+        {
+            ConversationManager.Instance.StartConversation(myConversation2);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
