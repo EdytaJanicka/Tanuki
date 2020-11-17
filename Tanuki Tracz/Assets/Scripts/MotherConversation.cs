@@ -11,6 +11,7 @@ public class MotherConversation : MonoBehaviour
     public NPCConversation myConversation;
     public NPCConversation myConversation1;
     public NPCConversation myConversation2;
+    public NPCConversation myConversation3;
     public GameObject buttonE;
     [SerializeField] private bool isTalking = false;
     private bool inAField = false;
@@ -53,6 +54,13 @@ public class MotherConversation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 2)
         {
             ConversationManager.Instance.StartConversation(myConversation2);
+            buttonE.SetActive(false);
+            isTalking = true;
+            StopMoving();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 3)
+        {
+            ConversationManager.Instance.StartConversation(myConversation3);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();

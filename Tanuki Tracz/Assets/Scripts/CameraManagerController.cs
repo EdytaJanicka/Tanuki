@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class CameraManagerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject cameraCarpet;
     void Start()
     {
-        
+        cameraCarpet.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

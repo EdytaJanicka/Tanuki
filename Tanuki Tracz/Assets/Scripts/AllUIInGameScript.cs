@@ -14,10 +14,14 @@ public class AllUIInGameScript : MonoBehaviour
     public GameObject comics5;
     public GameObject comics6;
     public GameObject escSettings;
+    public GameObject eButton;
+    public GameObject questBar;
 
 
     void Start()
     {
+        questBar.SetActive(false);
+        eButton.SetActive(false);
         escSettings.SetActive(false);
     }
 

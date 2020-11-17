@@ -13,6 +13,7 @@ public class JumpToMiniGame2 : MonoBehaviour
     void Start()
     {
          buttonE.SetActive(false);
+         cameraCarpet.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,9 +21,22 @@ public class JumpToMiniGame2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && mother.isAgreedInConversation == 3)
         {
-           
+            cameraCarpet.SetActive(true);
+            mainCamera.SetActive(false);
             buttonE.SetActive(false);
-
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        buttonE.SetActive(true);
+        inAField = true;
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        buttonE.SetActive(false);
+        inAField = false;
     }
 }
