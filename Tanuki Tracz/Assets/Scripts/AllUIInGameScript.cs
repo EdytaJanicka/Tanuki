@@ -16,6 +16,8 @@ public class AllUIInGameScript : MonoBehaviour
     public GameObject escSettings;
     public GameObject eButton;
     public GameObject questBar;
+    public GameObject questBar1;
+    public GameObject allPanels;
 
 
     void Start()
@@ -23,11 +25,34 @@ public class AllUIInGameScript : MonoBehaviour
         questBar.SetActive(false);
         eButton.SetActive(false);
         escSettings.SetActive(false);
+        questBar1.SetActive(false);
+        comics1.SetActive(true);
+        comics2.SetActive(false);
+        comics3.SetActive(false);
+        comics4.SetActive(false);
+        comics5.SetActive(false);
+        comics6.SetActive(false);
+        if (GameManager.instance.washingComplete == false)
+        {
+            Invoke("ShowPanel2", 4.0f);
+            Invoke("ShowPanel3", 8.0f);
+            Invoke("ShowPanel4", 12.0f);
+            Invoke("ShowPanel5", 16.0f);
+            Invoke("ShowPanel6", 20.0f);
+            Invoke("EndofPanels", 24.0f);
+        }
+        if (GameManager.instance.washingComplete == true)
+        {
+            EndofPanels();
+        }
     }
 
-    
     void Update()
     {
+
+
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             escSettings.SetActive(true);
@@ -42,6 +67,10 @@ public class AllUIInGameScript : MonoBehaviour
             {
             Time.timeScale = 1.0f;
             }
+
+
+
+
     }
 
     public void GoBack()
@@ -53,5 +82,39 @@ public class AllUIInGameScript : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("GameMenu");
+    }
+
+    public void ShowPanel2()
+    {
+        comics1.SetActive(false);
+        comics2.SetActive(true);
+    }
+
+    public void ShowPanel3()
+    {
+        comics2.SetActive(false);
+        comics3.SetActive(true);
+    }
+
+    public void ShowPanel4()
+    {
+        comics3.SetActive(false);
+        comics4.SetActive(true);
+    }
+
+    public void ShowPanel5()
+    {
+        comics4.SetActive(false);
+        comics5.SetActive(true);
+    }
+
+    public void ShowPanel6()
+    {
+        comics5.SetActive(false);
+        comics6.SetActive(true);
+    }
+    public void EndofPanels()
+    {
+        allPanels.SetActive(false);
     }
 }

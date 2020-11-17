@@ -5,9 +5,12 @@ using UnityEngine;
 public class CameraManagerController : MonoBehaviour
 {
     public GameObject cameraCarpet;
+    public GameObject cameraWater;
+
     void Start()
     {
         cameraCarpet.SetActive(false);
+        cameraWater.SetActive(false);
     }
 
     

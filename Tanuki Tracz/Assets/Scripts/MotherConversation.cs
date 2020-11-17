@@ -13,7 +13,7 @@ public class MotherConversation : MonoBehaviour
     public NPCConversation myConversation2;
     public NPCConversation myConversation3;
     public GameObject buttonE;
-    [SerializeField] private bool isTalking = false;
+    [SerializeField] public bool isTalking = false;
     private bool inAField = false;
     public GameObject movement;
     public GameObject camera1;
@@ -58,7 +58,16 @@ public class MotherConversation : MonoBehaviour
             isTalking = true;
             StopMoving();
         }
+
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 3)
+        {
+            ConversationManager.Instance.StartConversation(myConversation1);
+            buttonE.SetActive(false);
+            isTalking = true;
+            StopMoving();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 4)
         {
             ConversationManager.Instance.StartConversation(myConversation3);
             buttonE.SetActive(false);
