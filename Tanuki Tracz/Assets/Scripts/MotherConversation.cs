@@ -12,11 +12,14 @@ public class MotherConversation : MonoBehaviour
     public NPCConversation myConversation1;
     public NPCConversation myConversation2;
     public NPCConversation myConversation3;
+    public NPCConversation myConversation4;
     public GameObject buttonE;
     [SerializeField] public bool isTalking = false;
     private bool inAField = false;
     public GameObject movement;
     public GameObject camera1;
+    public GameObject mainCamera;
+    public GameObject cameraTalking;
     public int isAgreedInConversation = 0;
  
 
@@ -38,6 +41,8 @@ public class MotherConversation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 0)
         {
             ConversationManager.Instance.StartConversation(myConversation);
+            mainCamera.SetActive(false);
+            cameraTalking.SetActive(true);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
@@ -54,6 +59,8 @@ public class MotherConversation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 2)
         {
             ConversationManager.Instance.StartConversation(myConversation2);
+            mainCamera.SetActive(false);
+            cameraTalking.SetActive(true);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
@@ -62,6 +69,8 @@ public class MotherConversation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 3)
         {
             ConversationManager.Instance.StartConversation(myConversation1);
+            mainCamera.SetActive(false);
+            cameraTalking.SetActive(true);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
@@ -70,6 +79,26 @@ public class MotherConversation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 4)
         {
             ConversationManager.Instance.StartConversation(myConversation3);
+            mainCamera.SetActive(false);
+            cameraTalking.SetActive(true);
+            buttonE.SetActive(false);
+            isTalking = true;
+            StopMoving();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 5)
+        {
+            ConversationManager.Instance.StartConversation(myConversation1);
+            mainCamera.SetActive(false);
+            cameraTalking.SetActive(true);
+            buttonE.SetActive(false);
+            isTalking = true;
+            StopMoving();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 6)
+        {
+            ConversationManager.Instance.StartConversation(myConversation4);
+            mainCamera.SetActive(false);
+            cameraTalking.SetActive(true);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
@@ -108,6 +137,11 @@ public class MotherConversation : MonoBehaviour
     public void Agreed()
     {
         isAgreedInConversation += 1;
+    }
+    public void SwapCameras()
+    {
+        mainCamera.SetActive(true);
+        cameraTalking.SetActive(false);
     }
 
 }

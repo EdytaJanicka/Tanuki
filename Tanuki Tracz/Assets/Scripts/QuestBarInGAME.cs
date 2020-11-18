@@ -51,10 +51,14 @@ public class QuestBarInGAME : MonoBehaviour
             isInQuest.GetComponent<SphereCollider>().enabled = false;
             quests.quest3SetDesactive();
             quests.quest2SetActive();
+            Invoke("ChangeBoolToFalse", 0.5f);
 
         }
     }
-
+    void ChangeBoolToFalse()
+    {
+        motherConversation.GetComponent<MotherConversation>().isTalking = false;
+    }
     void Points()
     {
         currentPoints = currentPoints - decPoints;

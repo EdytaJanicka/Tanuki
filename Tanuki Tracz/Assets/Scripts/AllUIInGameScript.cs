@@ -18,10 +18,13 @@ public class AllUIInGameScript : MonoBehaviour
     public GameObject questBar;
     public GameObject questBar1;
     public GameObject allPanels;
+    Text moneyvalue;
+    public GameObject money;
 
 
     void Start()
     {
+        moneyvalue = money.GetComponent<Text>();
         questBar.SetActive(false);
         eButton.SetActive(false);
         escSettings.SetActive(false);
@@ -43,7 +46,7 @@ public class AllUIInGameScript : MonoBehaviour
         }
         if (GameManager.instance.washingComplete == true)
         {
-            EndofPanels();
+            EndofPanels(); 
         }
     }
 
@@ -115,5 +118,18 @@ public class AllUIInGameScript : MonoBehaviour
     public void EndofPanels()
     {
         allPanels.SetActive(false);
+    }
+
+    public void money1()
+    {
+        moneyvalue.text = "1/3";
+    }
+    public void money2()
+    {
+        moneyvalue.text = "2/3";
+    }
+    public void money3()
+    {
+        moneyvalue.text = "3/3";
     }
 }
