@@ -49,26 +49,25 @@ public class AllUIInGameScript : MonoBehaviour
 
     void Update()
     {
-
-
-
+        
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             escSettings.SetActive(true);
             
-            if (Time.timeScale == 1.0f)
+            if (Time.timeScale >= 1.0f)
             {
-                Time.timeScale = 0.00001f;
+                Time.timeScale = 0.001f;
             }
-            }
+            
 
             else
             {
             Time.timeScale = 1.0f;
+            escSettings.SetActive(false);
             }
 
-
+        }
 
 
     }
