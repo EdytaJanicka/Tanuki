@@ -13,6 +13,8 @@ public class AllUIInGameScript : MonoBehaviour
     public GameObject comics4;
     public GameObject comics5;
     public GameObject comics6;
+    public GameObject comics7;
+    public GameObject comics8;
     public GameObject escSettings;
     public GameObject eButton;
     public GameObject questBar;

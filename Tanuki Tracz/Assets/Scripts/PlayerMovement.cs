@@ -13,7 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 startPos;
     public Animator animator;
     public GameObject tanukiBody;
+    public AudioSource walking;
 
+    private void Start()
+    {
+        walking = GetComponent<AudioSource>();
+    }
     void Awake()
     {
         
@@ -29,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         Debug.Log("Nie działa");
+        
     }
 
     // Update is called once per frame
@@ -49,11 +55,13 @@ public class PlayerMovement : MonoBehaviour
         if (x != 0 || z != 0)
         {
             animator.SetBool("Run", true);
+            if(!walking.isPlaying)walking.Play();
+            
         }
         else
         {
             animator.SetBool("Run", false);
-            
+            walking.Stop();
         }
 
         velocity.y += gravity * Time.deltaTime;
