@@ -23,7 +23,6 @@ public class MotherConversation : MonoBehaviour
     public int isAgreedInConversation = 0;
  
 
-
     void Start()
     {
         buttonE.SetActive(false);
@@ -33,6 +32,7 @@ public class MotherConversation : MonoBehaviour
             Agreed();
             Agreed();
         }
+       
     }
 
    
@@ -46,6 +46,7 @@ public class MotherConversation : MonoBehaviour
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
+           
         }
 
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 1)
@@ -64,16 +65,15 @@ public class MotherConversation : MonoBehaviour
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
+           
         }
 
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 3)
         {
             ConversationManager.Instance.StartConversation(myConversation1);
-            mainCamera.SetActive(false);
-            cameraTalking.SetActive(true);
             buttonE.SetActive(false);
             isTalking = true;
-            StopMoving();
+           
         }
 
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 4)
@@ -84,15 +84,15 @@ public class MotherConversation : MonoBehaviour
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
+         
         }
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 5)
         {
             ConversationManager.Instance.StartConversation(myConversation1);
-            mainCamera.SetActive(false);
-            cameraTalking.SetActive(true);
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
+
         }
         if (Input.GetKeyDown(KeyCode.E) && inAField == true && isTalking == false && isAgreedInConversation == 6)
         {
@@ -102,6 +102,7 @@ public class MotherConversation : MonoBehaviour
             buttonE.SetActive(false);
             isTalking = true;
             StopMoving();
+           
         }
     }
 
@@ -143,5 +144,5 @@ public class MotherConversation : MonoBehaviour
         mainCamera.SetActive(true);
         cameraTalking.SetActive(false);
     }
-
+    
 }

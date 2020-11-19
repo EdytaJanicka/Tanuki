@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public GameObject tanukiBody;
     public AudioSource walking;
+    public MotherConversation mother;
 
     private void Start()
     {
         walking = GetComponent<AudioSource>();
+        Cursor.visible = false;
     }
     void Awake()
     {
@@ -37,9 +39,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        
         float x = 0;
         float z = 0;
         
@@ -66,6 +69,19 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity);
-        
+
+      //if(mother.isTalking == true)
+      //  {
+      //      Cursor.visible = true;
+      //  }  
+    }
+
+    public void EnableCursor()
+    {
+        Cursor.visible = false;
+    }
+    public void DisableCursor()
+    {
+        Cursor.visible = true;
     }
 }

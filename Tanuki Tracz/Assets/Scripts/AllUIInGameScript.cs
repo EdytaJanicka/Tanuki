@@ -20,6 +20,7 @@ public class AllUIInGameScript : MonoBehaviour
     public GameObject questBar;
     public GameObject questBar1;
     public GameObject allPanels;
+    public PlayerMovement movement;
     Text moneyvalue;
     public GameObject money;
 
@@ -37,6 +38,8 @@ public class AllUIInGameScript : MonoBehaviour
         comics4.SetActive(false);
         comics5.SetActive(false);
         comics6.SetActive(false);
+        comics7.SetActive(false);
+        comics8.SetActive(false);
         if (GameManager.instance.washingComplete == false)
         {
             Invoke("ShowPanel2", 4.0f);
@@ -55,11 +58,11 @@ public class AllUIInGameScript : MonoBehaviour
     void Update()
     {
         
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             escSettings.SetActive(true);
-            
+            movement.DisableCursor();
+
             if (Time.timeScale >= 1.0f)
             {
                 Time.timeScale = 0.001f;
@@ -73,8 +76,7 @@ public class AllUIInGameScript : MonoBehaviour
             }
 
         }
-
-
+        
     }
 
     public void GoBack()
@@ -117,19 +119,51 @@ public class AllUIInGameScript : MonoBehaviour
         comics5.SetActive(false);
         comics6.SetActive(true);
     }
+
+    public void ShowPanel7()
+    {
+        comics7.SetActive(true);
+    }
+
+    public void ShowPanel8()
+    {
+        comics7.SetActive(false);
+        comics8.SetActive(true);
+    }
+
+    public void TheEndOfPanelsAndGame()
+    {
+        StartofPanels();
+        Invoke("ShowPanel7", 0.0f);
+        Invoke("ShowPanel8", 5.0f);
+        Invoke("ShowCredits", 10.0f);
+
+    }
+
+    public void ShowCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void EndofPanels()
     {
         allPanels.SetActive(false);
+    }
+    public void StartofPanels()
+    {
+        allPanels.SetActive(true);
     }
 
     public void money1()
     {
         moneyvalue.text = "1/3";
     }
+
     public void money2()
     {
         moneyvalue.text = "2/3";
     }
+
     public void money3()
     {
         moneyvalue.text = "3/3";
